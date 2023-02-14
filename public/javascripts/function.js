@@ -39,9 +39,9 @@ function checkDate() {
     let date = `Date: ${day.toString().padStart(2, 0)}/${month.toString().padStart(2, 0)}/${year.toString().padStart(4, 0)}`;
 
     if (isValidDate(day, month, year)) {
-        document.getElementById('lblResult').innerHTML = `${date} is valid`;
+        document.getElementById('lblResult').innerHTML = `${date} is valid.`;
     } else {
-        document.getElementById('lblResult').innerHTML = `${date} is not valid`;
+        document.getElementById('lblResult').innerHTML = `${date} is not valid.`;
     }
     // alert(`Day in month: ${maxDayInMonth(year, month)}`);
 }
