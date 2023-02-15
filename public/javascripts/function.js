@@ -40,8 +40,8 @@ function checkDate() {
 
     if (isNaN(day) || isNaN(month) || isNaN(year)) {
         document.getElementById('lblResult').innerHTML = 'Please fill all the fields.';
-    } else if (year > 3000) {
-        document.getElementById('lblResult').innerHTML = 'Year must be less than 3000.';
+    } else if (year > 3000 || year < 1000) {
+        document.getElementById('lblResult').innerHTML = 'Year must be more than 999 and less than 3001.';
     } else if (isValidDate(day, month, year)) {
         document.getElementById('lblResult').innerHTML = `${date} is valid.`;
     } else {
