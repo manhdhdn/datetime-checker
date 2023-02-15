@@ -40,12 +40,13 @@ function checkDate() {
 
     if (isNaN(day) || isNaN(month) || isNaN(year)) {
         document.getElementById('lblResult').innerHTML = 'Please fill all the fields.';
+    } else if (year > 3000) {
+        document.getElementById('lblResult').innerHTML = 'Year must be less than 3000.';
     } else if (isValidDate(day, month, year)) {
         document.getElementById('lblResult').innerHTML = `${date} is valid.`;
     } else {
         document.getElementById('lblResult').innerHTML = `${date} is invalid.`;
     }
-    // alert(`Day in month: ${maxDayInMonth(year, month)}`);
 }
 
 function clearInputs() {
