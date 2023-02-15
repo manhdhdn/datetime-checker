@@ -43,7 +43,7 @@ function checkDate() {
     } else if (isValidDate(day, month, year)) {
         document.getElementById('lblResult').innerHTML = `${date} is valid.`;
     } else {
-        document.getElementById('lblResult').innerHTML = `${date} is not valid.`;
+        document.getElementById('lblResult').innerHTML = `${date} is invalid.`;
     }
     // alert(`Day in month: ${maxDayInMonth(year, month)}`);
 }
