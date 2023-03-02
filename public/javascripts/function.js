@@ -36,16 +36,25 @@ function checkDate() {
     let month = parseInt(document.getElementById('txtMonth').value);
     let year = parseInt(document.getElementById('txtYear').value);
 
-    let date = `Date: ${day.toString().padStart(2, 0)}/${month.toString().padStart(2, 0)}/${year.toString().padStart(4, 0)}`;
+    let dayIsFloat = parseFloat(document.getElementById('txtDay').value) > parseInt(document.getElementById('txtDay').value);
+    let monthIsFloat = parseFloat(document.getElementById('txtMonth').value) > parseInt(document.getElementById('txtMonth').value);
+    let yearIsFloat = parseFloat(document.getElementById('txtYear').value) > parseInt(document.getElementById('txtYear').value);
 
     if (isNaN(day) || isNaN(month) || isNaN(year)) {
         document.getElementById('lblResult').innerHTML = 'Please fill all the fields.';
-    } else if (isValidDate(day, month, year)) {
-        document.getElementById('lblResult').innerHTML = `${date} is valid.`;
+    } else if (dayIsFloat || monthIsFloat || yearIsFloat) {
+        document.getElementById('lblResult').innerHTML = 'You can only input integer values.';
+    } else if (year > 3000 || year < 1000) {
+        document.getElementById('lblResult').innerHTML = 'Year must be more than 999 and less than 3001.';
     } else {
-        document.getElementById('lblResult').innerHTML = `${date} is not valid.`;
+        let date = `Date: ${day.toString().padStart(2, 0)}/${month.toString().padStart(2, 0)}/${year.toString().padStart(4, 0)}`;
+
+        if (isValidDate(day, month, year)) {
+            document.getElementById('lblResult').innerHTML = `${date} is valid.`;
+        } else {
+            document.getElementById('lblResult').innerHTML = `${date} is invalid.`;
+        }
     }
-    // alert(`Day in month: ${maxDayInMonth(year, month)}`);
 }
 
 function clearInputs() {
