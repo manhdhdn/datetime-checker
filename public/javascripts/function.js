@@ -44,7 +44,7 @@ function checkDate() {
         document.getElementById('lblResult').innerHTML = 'Please fill all the fields.';
     } else if (dayIsFloat || monthIsFloat || yearIsFloat) {
         document.getElementById('lblResult').innerHTML = 'You can only input integer values.';
-    } else if (year > 3000 || year < 1000) {
+    } else if (year < 1000) {
         document.getElementById('lblResult').innerHTML = 'Year must be more than 999 and less than 3001.';
     } else {
         let date = `Date: ${day.toString().padStart(2, 0)}/${month.toString().padStart(2, 0)}/${year.toString().padStart(4, 0)}`;

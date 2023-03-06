@@ -34,7 +34,7 @@ describe("Date Time Checker", () => {
     cy.get("#txtMonth").type("01");
     cy.get("#txtYear").type("2022");
     cy.get("button").contains("Check").click();
-    cy.get("#lblResult").should("have.text", "12/01/2022");
+    cy.get("#lblResult").should("have.text", "Date: 12/01/2022 is valid.");
   })
   
 
